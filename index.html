@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi Karyawan</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Absensi Karyawan</h2>
+  <form id="absensiForm">
+    <label>Masukan Nama</label>
+    <input type="text" id="nama" placeholder="Nama" required>
+    <label>Masukan Alamat Anda</label>
+    <input type="text" id="alamat" placeholder="Alamat" required>
+    <select id="jenisKelamin" required>
+      <option value="">-- Pilih Jenis Kelamin --</option>
+      <option value="Laki-laki">Laki-laki</option>
+      <option value="Perempuan">Perempuan</option>
+    </select>
+    <label>Tanggal Absen</label>
+    <input type="date" id="tanggalAbsen" required>
+    <label>Jam Masuk</label>
+    <input type="time" id="jamMasuk" required>
+    <label>Jam Keluar</label>
+    <input type="time" id="jamKeluar" required>
+    <button type="submit">Simpan</button>
+  </form>
+
+ 
+  <div id="absensiContainer" style="display: none;">
+    
+     <button class="btn-sort" onclick="sortByNama()">Urutkan Nama</button>
+
+    <ul class="pagination" id="pagination"></ul>
+
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Nama</th>
+          <th>Alamat</th>
+          <th>Jenis Kelamin</th>
+          <th>Tanggal Absen</th>
+          <th>Jam Masuk</th>
+          <th>Jam Keluar</th>
+          <th>Aksi</th>
+        </tr>
+      </thead>
+      <tbody id="dataTable"></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
